@@ -65,7 +65,7 @@ const CtaStrip = () => {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <a
-                href="https://maps.google.com/?q=Obala+kralja+Tomislava+12+Split"
+                href="https://maps.app.goo.gl/kJjsFsaaawZjvakf7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-sm hover:bg-primary/90 transition-all duration-300 tracking-wide text-sm uppercase"
