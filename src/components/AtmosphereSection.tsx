@@ -31,10 +31,8 @@ const AtmosphereSection = () => {
         </div>
 
         {/* IMAGE PLACEHOLDER — replace the gradient div below with an <img> tag later */}
-        <div className="mt-14 rounded-sm overflow-hidden aspect-[16/10] bg-gradient-to-br from-[hsl(20,35%,18%)] via-[hsl(350,20%,14%)] to-[hsl(35,40%,12%)] relative">
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-tungsten/10 blur-[80px]" />
-          <div className="absolute bottom-4 left-4 text-xs uppercase tracking-[0.2em] text-foreground/30">Placeholder · zamijeni slikom</div>
+        <div className="mt-14 rounded-sm overflow-hidden aspect-square max-w-lg mx-auto">
+            <img src="/xyz.jpg" alt="Description" className="w-full h-full object-cover" />
         </div>
 
         <div className="mt-12 flex items-center justify-center gap-6 flex-wrap">
