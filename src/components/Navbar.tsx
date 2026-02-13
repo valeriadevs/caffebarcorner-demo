@@ -27,7 +27,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        <a href="#" className="font-serif text-2xl font-bold text-primary tracking-wider">
+        <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="font-serif text-2xl font-bold text-primary tracking-wider">
           Corner
         </a>
 
@@ -37,6 +37,10 @@ const Navbar = () => {
             <li key={item.href}>
               <a
                 href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-300 tracking-wide uppercase"
               >
                 {item.label}
@@ -69,7 +73,11 @@ const Navbar = () => {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileOpen(false);
+                    document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
+                  }}
                   className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors uppercase tracking-wide"
                 >
                   {item.label}

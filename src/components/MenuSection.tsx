@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const tabs = ["Gin", "Whiskey", "Ostala pića", "Pivo"] as const;
-
 type TabKey = (typeof tabs)[number];
 
 const menuData: Record<TabKey, { name: string; desc: string; price: string }[]> = {
@@ -30,19 +30,17 @@ const menuData: Record<TabKey, { name: string; desc: string; price: string }[]> 
 
 const MenuSection = () => {
   const [active, setActive] = useState<TabKey>("Gin");
+  const { ref, isVisible } = useScrollReveal();
 
   return (
     <section id="pica" className="py-24 section-darker">
-      <div className="container mx-auto px-6 max-w-4xl">
+      <div ref={ref} className={`container mx-auto px-6 max-w-4xl transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
         <div className="text-center mb-14">
-          <span className="text-primary/70 text-xs uppercase tracking-[0.3em] font-medium">
-            Naša ponuda
-          </span>
+          <span className="text-primary/70 text-xs uppercase tracking-[0.3em] font-medium">Naša ponuda</span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold mt-3 mb-4">Pića</h2>
           <div className="divider-warm mt-4" />
         </div>
 
-        {/* Tabs */}
         <div className="flex justify-center gap-2 mb-12 flex-wrap">
           {tabs.map((tab) => (
             <button
@@ -59,7 +57,6 @@ const MenuSection = () => {
           ))}
         </div>
 
-        {/* Items */}
         <div className="space-y-1">
           {menuData[active].map((item, i) => (
             <div
@@ -68,9 +65,7 @@ const MenuSection = () => {
               style={{ animationDelay: `${i * 0.1}s`, animationFillMode: "both" }}
             >
               <div className="flex-1">
-                <h3 className="font-serif text-lg font-medium group-hover:text-primary transition-colors duration-300">
-                  {item.name}
-                </h3>
+                <h3 className="font-serif text-lg font-medium group-hover:text-primary transition-colors duration-300">{item.name}</h3>
                 <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
               </div>
               <span className="text-primary font-medium ml-4 whitespace-nowrap">{item.price}</span>
