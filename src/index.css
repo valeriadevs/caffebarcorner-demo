@@ -126,6 +126,8 @@
 
 @layer utilities {
   .animate-blur-in {
+    filter: blur(12px);
+    transform: scale(1.05);
     animation: blur-in 2.5s ease-out forwards;
   }
 
