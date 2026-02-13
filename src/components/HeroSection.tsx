@@ -2,8 +2,9 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated gradient background — change colors in the gradient stops below */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(20,40%,12%)] via-[hsl(350,30%,15%)] to-[hsl(35,50%,10%)] animate-blur-in" />
-      
+      <img src="/herotoupscale.png" alt="Corner interior" className="absolute inset-0 w-full h-full object-cover animate-blur-in" />
+
+    
       {/* Warm gradient overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/70" />
