@@ -17,7 +17,7 @@ const HeroSection = () => {
       <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
         <div className="animate-fade-up">
           <span className="inline-block text-primary/80 text-sm uppercase tracking-[0.3em] font-medium mb-6">
-            Caffe Bar
+            Le Mat
           </span>
         </div>
         
