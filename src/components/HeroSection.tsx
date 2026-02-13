@@ -1,8 +1,8 @@
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated background - brick pattern with warm glow */}
-      <div className="absolute inset-0 bg-brick-pattern animate-blur-in" />
+      {/* Animated gradient background — change colors in the gradient stops below */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(20,40%,12%)] via-[hsl(350,30%,15%)] to-[hsl(35,50%,10%)] animate-blur-in" />
       
       {/* Warm gradient overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
@@ -32,12 +32,14 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up-delay-2">
           <a
             href="#pica"
+            onClick={(e) => { e.preventDefault(); document.querySelector("#pica")?.scrollIntoView({ behavior: "smooth" }); }}
             className="px-8 py-3.5 bg-primary text-primary-foreground font-medium rounded-sm hover:bg-primary/90 transition-all duration-300 tracking-wide text-sm uppercase"
           >
             Pogledaj Pića
           </a>
           <a
             href="#galerija"
+            onClick={(e) => { e.preventDefault(); document.querySelector("#galerija")?.scrollIntoView({ behavior: "smooth" }); }}
             className="px-8 py-3.5 border border-foreground/20 text-foreground/80 font-medium rounded-sm hover:border-primary/50 hover:text-primary transition-all duration-300 tracking-wide text-sm uppercase"
           >
             Istraži Galeriju →

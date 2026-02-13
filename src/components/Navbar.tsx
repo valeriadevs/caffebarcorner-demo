@@ -66,27 +66,29 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden bg-background/98 backdrop-blur-md border-t border-border">
-          <ul className="flex flex-col items-center gap-4 py-6">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setMobileOpen(false);
-                    document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors uppercase tracking-wide"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div
+        className={`md:hidden bg-background/98 backdrop-blur-md border-t border-border overflow-hidden transition-all duration-300 ease-in-out ${
+          mobileOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0 border-t-transparent"
+        }`}
+      >
+        <ul className="flex flex-col items-center gap-4 py-6">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <a
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMobileOpen(false);
+                  document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors uppercase tracking-wide"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };

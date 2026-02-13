@@ -4,7 +4,7 @@ import FeatureStrip from "@/components/FeatureStrip";
 import MenuSection from "@/components/MenuSection";
 import GallerySection from "@/components/GallerySection";
 import AtmosphereSection from "@/components/AtmosphereSection";
-import TerraceSection from "@/components/TerraceSection";
+import OutdoorSection from "@/components/OutdoorSection";
 import AboutSection from "@/components/AboutSection";
 import CtaStrip from "@/components/CtaStrip";
 import Footer from "@/components/Footer";
@@ -18,7 +18,7 @@ const Index = () => {
       <MenuSection />
       <GallerySection />
       <AtmosphereSection />
-      <TerraceSection />
+      <OutdoorSection />
       <AboutSection />
       <CtaStrip />
       <Footer />
