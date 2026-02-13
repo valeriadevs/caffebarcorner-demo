@@ -2,7 +2,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated gradient background — change colors in the gradient stops below */}
-      <img src="/herotoupscale.png" alt="Corner interior" className="absolute inset-0 w-full h-full object-cover animate-blur-in" />
+      <img src="/herotoupscale.jpg" alt="Corner interior" className="absolute inset-0 w-full h-full object-cover animate-blur-in" />
 
     
       {/* Warm gradient overlays */}
