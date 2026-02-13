@@ -28,11 +28,8 @@ const OutdoorSection = () => {
         </div>
 
         {/* IMAGE PLACEHOLDER — replace the gradient div below with an <img> tag later */}
-        <div className="mt-14 rounded-sm overflow-hidden aspect-[4/3] bg-gradient-to-br from-[hsl(35,30%,16%)] via-[hsl(20,25%,12%)] to-[hsl(30,35%,10%)] relative">
-          <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
-          <div className="absolute top-1/2 left-1/3 w-64 h-64 rounded-full bg-tungsten/8 blur-[100px]" />
-          <div className="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full bg-pink-ambient/6 blur-[60px]" />
-          <div className="absolute bottom-4 left-4 text-xs uppercase tracking-[0.2em] text-foreground/30">Placeholder · zamijeni slikom</div>
+        <div className="mt-14 rounded-sm overflow-hidden aspect-square max-w-lg mx-auto">
+        <img src="/outdooorrrs.jpg" alt="Description" className="w-full h-full object-cover" />
         </div>
       </div>
 
