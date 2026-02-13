@@ -5,7 +5,7 @@ const AtmosphereSection = () => {
 
   return (
     <section id="atmosfera" className="relative py-32 overflow-hidden">
-      {/* Rich gradient background — change colors here */}
+      {/* Rich gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[hsl(350,25%,12%)] via-[hsl(20,20%,10%)] to-[hsl(30,30%,8%)]" />
       <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/50" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-tungsten/8 blur-[120px]" />
@@ -30,9 +30,9 @@ const AtmosphereSection = () => {
           </p>
         </div>
 
-        {/* IMAGE PLACEHOLDER — replace the gradient div below with an <img> tag later */}
-        <div className="mt-14 rounded-sm overflow-hidden aspect-square max-w-lg mx-auto">
-            <img src="/xyz.jpg" alt="Description" className="w-full h-full object-cover" />
+        <div className="mt-14 rounded-sm overflow-hidden aspect-[16/10] relative">
+          <img src="/xyz.jpg" alt="Corner atmosfera" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-background/30" />
         </div>
 
         <div className="mt-12 flex items-center justify-center gap-6 flex-wrap">
