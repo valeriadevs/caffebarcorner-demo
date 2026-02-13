@@ -5,7 +5,7 @@ const GallerySection = () => {
 
   return (
     <section id="galerija" className="py-24 section-dark">
-      <div ref={ref} className={`container mx-auto px-6 max-w-5xl transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+      <div ref={ref} className={`container mx-auto px-6 max-w-5xl overflow-hidden transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
         <div className="text-center mb-14">
           <span className="text-primary/60 text-xs uppercase tracking-[0.3em] font-medium">Vizuali</span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold mt-3 mb-4">Galerija</h2>
@@ -14,7 +14,7 @@ const GallerySection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {[
-            { bg: "bg-brick-pattern", label: "Interijer", span: "sm:col-span-2 md:col-span-2 md:row-span-2 aspect-video sm:aspect-video md:aspect-auto min-h-[200px] md:min-h-[300px]" },
+            { bg: "bg-brick-pattern", label: "Interijer", span: "sm:col-span-2 md:col-span-2 md:row-span-2 aspect-video md:aspect-auto md:min-h-[300px]" },
             { bg: "bg-gradient-to-br from-secondary to-muted", label: "Šank", span: "aspect-video sm:aspect-square" },
             { bg: "bg-gradient-to-tr from-wood to-brick", label: "Detalji", span: "aspect-video sm:aspect-square" },
             { bg: "bg-gradient-to-r from-muted to-secondary", label: "Terasa", span: "sm:col-span-2 md:col-span-2 aspect-video" },

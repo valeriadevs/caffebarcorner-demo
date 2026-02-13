@@ -13,17 +13,27 @@ const OutdoorSection = () => {
       <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-tungsten/8 blur-[100px]" />
       <div className="absolute bottom-1/4 left-1/3 w-56 h-56 rounded-full bg-pink-ambient/8 blur-[80px]" />
 
-      <div ref={ref} className={`relative z-10 container mx-auto px-6 max-w-3xl text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-        <Sun className="w-8 h-8 text-primary/60 mx-auto mb-6" strokeWidth={1} />
-        <span className="text-primary/60 text-xs uppercase tracking-[0.3em] font-medium">Vanjski prostor</span>
-        <h2 className="font-serif text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">
-          Na otvorenom,{" "}
-          <span className="text-gradient-warm">ista Corner energija.</span>
-        </h2>
-        <p className="text-foreground/50 text-lg font-light leading-relaxed max-w-xl mx-auto">
-          Kad sunce zađe, Corner se širi van — morski povjetarac, opušteni razgovori
-          i najbolja pića pod otvorenim nebom.
-        </p>
+      <div ref={ref} className={`relative z-10 container mx-auto px-6 max-w-4xl transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div className="text-center max-w-3xl mx-auto">
+          <Sun className="w-8 h-8 text-primary/60 mx-auto mb-6" strokeWidth={1} />
+          <span className="text-primary/60 text-xs uppercase tracking-[0.3em] font-medium">Vanjski prostor</span>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">
+            Na otvorenom,{" "}
+            <span className="text-gradient-warm">ista Corner energija.</span>
+          </h2>
+          <p className="text-foreground/50 text-lg font-light leading-relaxed max-w-xl mx-auto">
+            Kad sunce zađe, Corner se širi van — morski povjetarac, opušteni razgovori
+            i najbolja pića pod otvorenim nebom.
+          </p>
+        </div>
+
+        {/* IMAGE PLACEHOLDER — replace the gradient div below with an <img> tag later */}
+        <div className="mt-14 rounded-sm overflow-hidden aspect-video bg-gradient-to-br from-[hsl(35,30%,16%)] via-[hsl(20,25%,12%)] to-[hsl(30,35%,10%)] relative">
+          <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
+          <div className="absolute top-1/2 left-1/3 w-64 h-64 rounded-full bg-tungsten/8 blur-[100px]" />
+          <div className="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full bg-pink-ambient/6 blur-[60px]" />
+          <div className="absolute bottom-4 left-4 text-xs uppercase tracking-[0.2em] text-foreground/30">Placeholder · zamijeni slikom</div>
+        </div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
