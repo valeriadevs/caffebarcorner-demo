@@ -31,8 +31,8 @@ const CtaStrip = () => {
               <div>
                 <h3 className="font-serif text-lg font-medium mb-1">Adresa</h3>
                 <p className="text-foreground/60 text-sm leading-relaxed">
-                  Obala kralja Tomislava 12<br />
-                  21000 Split, Hrvatska
+                  Ul. Otokara Keršovanija 2<br />
+                  52440 Poreč, Hrvatska.
                 </p>
               </div>
             </div>
@@ -58,7 +58,7 @@ const CtaStrip = () => {
               <Phone className="w-5 h-5 text-primary mt-1 shrink-0" strokeWidth={1.5} />
               <div>
                 <h3 className="font-serif text-lg font-medium mb-1">Kontakt</h3>
-                <p className="text-foreground/60 text-sm">+385 21 123 456</p>
+                <p className="text-foreground/60 text-sm">+123 XX XXX XXX</p>
               </div>
             </div>
 
@@ -74,7 +74,7 @@ const CtaStrip = () => {
                 Upute
               </a>
               <a
-                href="tel:+38521123456"
+                href="tel:+123XXXXXX"
                 className="flex items-center justify-center gap-2 px-6 py-3 border border-foreground/20 text-foreground/80 font-medium rounded-sm hover:border-primary/50 hover:text-primary transition-all duration-300 tracking-wide text-sm uppercase"
               >
                 <Phone className="w-4 h-4" />
@@ -86,7 +86,7 @@ const CtaStrip = () => {
           {/* Map embed */}
           <div className="rounded-sm overflow-hidden border border-border/30 min-h-[300px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2893.5!2d16.4388!3d43.5081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDMwJzI5LjIiTiAxNsKwMjYnMTkuNyJF!5e0!3m2!1sen!2shr!4v1"
+              src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2809.996864919356!2d13.591924696789548!3d45.2276311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477c979e06b435ff%3A0xe0e5ec99c39c6d0a!2sCaffe%20Bar%20Corner!5e0!3m2!1sen!2sin!4v1770963497803!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: 300, filter: "invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2)" }}
