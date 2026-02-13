@@ -6,30 +6,33 @@ const OutdoorSection = () => {
 
   return (
     <section className="relative py-28 overflow-hidden">
-      {/* Rich gradient background — change colors here */}
+      {/* Rich gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[hsl(20,30%,10%)] via-[hsl(35,25%,14%)] to-[hsl(15,35%,8%)]" />
       <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-background/40" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-tungsten/8 blur-[100px]" />
       <div className="absolute bottom-1/4 left-1/3 w-56 h-56 rounded-full bg-pink-ambient/8 blur-[80px]" />
 
-      <div ref={ref} className={`relative z-10 container mx-auto px-6 max-w-4xl transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-        <div className="text-center max-w-3xl mx-auto">
-          <Sun className="w-8 h-8 text-primary/60 mx-auto mb-6" strokeWidth={1} />
-          <span className="text-primary/60 text-xs uppercase tracking-[0.3em] font-medium">Vanjski prostor</span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">
-            Na otvorenom,{" "}
-            <span className="text-gradient-warm">ista Corner energija.</span>
-          </h2>
-          <p className="text-foreground/50 text-lg font-light leading-relaxed max-w-xl mx-auto">
-            Kad sunce zađe, Corner se širi van — morski povjetarac, opušteni razgovori
-            i najbolja pića pod otvorenim nebom.
-          </p>
-        </div>
+      <div ref={ref} className={`relative z-10 container mx-auto px-6 max-w-5xl transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        {/* Mobile: stacked, Desktop: side-by-side (image left, text right) */}
+        <div className="flex flex-col md:flex-row-reverse md:items-center md:gap-16">
+          <div className="text-center md:text-left md:flex-1">
+            <Sun className="w-8 h-8 text-primary/60 mx-auto md:mx-0 mb-6" strokeWidth={1} />
+            <span className="text-primary/60 text-xs uppercase tracking-[0.3em] font-medium">Vanjski prostor</span>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">
+              Na otvorenom,{" "}
+              <span className="text-gradient-warm">ista Corner energija.</span>
+            </h2>
+            <p className="text-foreground/50 text-lg font-light leading-relaxed">
+              Kad sunce zađe, Corner se širi van — morski povjetarac, opušteni razgovori
+              i najbolja pića pod otvorenim nebom.
+            </p>
+          </div>
 
-        {/* IMAGE PLACEHOLDER — replace the gradient div below with an <img> tag later */}
-        <div className="mt-14 rounded-sm overflow-hidden aspect-square max-w-lg mx-auto">
-        <img src="/outdooorrrs.jpg" alt="Description" className="w-full h-full object-cover" />
+          <div className="mt-14 md:mt-0 md:flex-1 rounded-sm overflow-hidden aspect-[4/3] relative">
+            <img src="/outdooorrrs.jpg" alt="Corner vanjski prostor" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-background/30" />
+          </div>
         </div>
       </div>
 
