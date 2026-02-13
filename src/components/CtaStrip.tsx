@@ -1,5 +1,11 @@
-import { MapPin, Phone } from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+
+const hours = [
+  { day: "Pon – Čet", time: "08:00 – 00:00" },
+  { day: "Pet – Sub", time: "08:00 – 02:00" },
+  { day: "Nedjelja", time: "10:00 – 23:00" },
+];
 
 const CtaStrip = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -10,17 +16,86 @@ const CtaStrip = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-tungsten/8 blur-[120px]" />
 
-      <div ref={ref} className={`relative z-10 container mx-auto px-6 text-center max-w-xl transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"}`}>
-        <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 glow-text">Vidimo se večeras?</h2>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#" className="flex items-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-medium rounded-sm hover:bg-primary/90 transition-all duration-300 tracking-wide text-sm uppercase">
-            <MapPin className="w-4 h-4" />
-            Upute
-          </a>
-          <a href="tel:+385" className="flex items-center gap-2 px-8 py-3.5 border border-foreground/20 text-foreground/80 font-medium rounded-sm hover:border-primary/50 hover:text-primary transition-all duration-300 tracking-wide text-sm uppercase">
-            <Phone className="w-4 h-4" />
-            Nazovi
-          </a>
+      <div ref={ref} className={`relative z-10 container mx-auto px-6 max-w-4xl transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"}`}>
+        <div className="text-center mb-14">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 glow-text">Vidimo se večeras?</h2>
+          <div className="divider-warm" />
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-10 mb-12">
+          {/* Info column */}
+          <div className="space-y-8">
+            {/* Address */}
+            <div className="flex items-start gap-4">
+              <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" strokeWidth={1.5} />
+              <div>
+                <h3 className="font-serif text-lg font-medium mb-1">Adresa</h3>
+                <p className="text-foreground/60 text-sm leading-relaxed">
+                  Obala kralja Tomislava 12<br />
+                  21000 Split, Hrvatska
+                </p>
+              </div>
+            </div>
+
+            {/* Working hours */}
+            <div className="flex items-start gap-4">
+              <Clock className="w-5 h-5 text-primary mt-1 shrink-0" strokeWidth={1.5} />
+              <div>
+                <h3 className="font-serif text-lg font-medium mb-2">Radno vrijeme</h3>
+                <div className="space-y-1">
+                  {hours.map((h, i) => (
+                    <div key={i} className="flex justify-between gap-8 text-sm text-foreground/60">
+                      <span>{h.day}</span>
+                      <span className="text-foreground/80">{h.time}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Contact */}
+            <div className="flex items-start gap-4">
+              <Phone className="w-5 h-5 text-primary mt-1 shrink-0" strokeWidth={1.5} />
+              <div>
+                <h3 className="font-serif text-lg font-medium mb-1">Kontakt</h3>
+                <p className="text-foreground/60 text-sm">+385 21 123 456</p>
+              </div>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <a
+                href="https://maps.google.com/?q=Obala+kralja+Tomislava+12+Split"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-sm hover:bg-primary/90 transition-all duration-300 tracking-wide text-sm uppercase"
+              >
+                <MapPin className="w-4 h-4" />
+                Upute
+              </a>
+              <a
+                href="tel:+38521123456"
+                className="flex items-center justify-center gap-2 px-6 py-3 border border-foreground/20 text-foreground/80 font-medium rounded-sm hover:border-primary/50 hover:text-primary transition-all duration-300 tracking-wide text-sm uppercase"
+              >
+                <Phone className="w-4 h-4" />
+                Nazovi
+              </a>
+            </div>
+          </div>
+
+          {/* Map embed */}
+          <div className="rounded-sm overflow-hidden border border-border/30 min-h-[300px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2893.5!2d16.4388!3d43.5081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDMwJzI5LjIiTiAxNsKwMjYnMTkuNyJF!5e0!3m2!1sen!2shr!4v1"
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: 300, filter: "invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2)" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Corner lokacija"
+            />
+          </div>
         </div>
       </div>
     </section>
