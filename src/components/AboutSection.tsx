@@ -21,10 +21,8 @@ const AboutSection = () => {
         </div>
 
         {/* IMAGE PLACEHOLDER — replace the gradient div below with an <img> tag later */}
-        <div className="mt-14 rounded-sm overflow-hidden aspect-square max-w-lg mx-auto bg-gradient-to-br from-[hsl(25,30%,14%)] via-[hsl(15,25%,10%)] to-[hsl(35,35%,12%)] relative">
-          <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 rounded-full bg-tungsten/8 blur-[80px]" />
-          <div className="absolute bottom-4 left-4 text-xs uppercase tracking-[0.2em] text-foreground/30">Placeholder · zamijeni slikom</div>
+        <div className="mt-14 rounded-sm overflow-hidden aspect-square max-w-lg mx-auto">
+            <img src="/onama.jpg" alt="Description" className="w-full h-full object-cover" />
         </div>
       </div>
     </section>
