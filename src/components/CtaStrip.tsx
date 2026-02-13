@@ -86,7 +86,7 @@ const CtaStrip = () => {
           {/* Map embed */}
           <div className="rounded-sm overflow-hidden border border-border/30 min-h-[300px]">
             <iframe
-              src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2809.996864919356!2d13.591924696789548!3d45.2276311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477c979e06b435ff%3A0xe0e5ec99c39c6d0a!2sCaffe%20Bar%20Corner!5e0!3m2!1sen!2sin!4v1770963497803!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+              src="<iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2809.996864919356!2d13.591924696789548!3d45.2276311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477c979e06b435ff%3A0xe0e5ec99c39c6d0a!2sCaffe%20Bar%20Corner!5e0!3m2!1sen!2sin!4v1770963683487!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: 300, filter: "invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2)" }}
