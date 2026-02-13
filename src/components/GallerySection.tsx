@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const galleryItems = [
   {
-    /* IMAGE: Replace src with your photo path, e.g. "/interior.jpg" */
     src: "/interior.jpg",
     label: "Interijer",
     span: "sm:col-span-2 md:col-span-2 md:row-span-2 aspect-video md:aspect-auto md:min-h-[300px]",
@@ -39,7 +39,19 @@ const galleryItems = [
 
 const GallerySection = () => {
   const { ref, isVisible } = useScrollReveal();
-  const [selectedImage, setSelectedImage] = useState<{ src: string; label: string } | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const selectedImage = selectedIndex !== null ? galleryItems[selectedIndex] : null;
+
+  const goNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedIndex !== null) setSelectedIndex((selectedIndex + 1) % galleryItems.length);
+  };
+
+  const goPrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedIndex !== null) setSelectedIndex((selectedIndex - 1 + galleryItems.length) % galleryItems.length);
+  };
 
   return (
     <>
@@ -57,15 +69,13 @@ const GallerySection = () => {
                 key={i}
                 className={`relative ${item.span} rounded-sm overflow-hidden group cursor-pointer transition-all duration-500`}
                 style={{ transitionDelay: isVisible ? `${i * 100}ms` : "0ms" }}
-                onClick={() => setSelectedImage(item)}
+                onClick={() => setSelectedIndex(i)}
               >
-                {/* IMAGE: Each item tries to load the src image. If you haven't added photos yet, the gradient shows. */}
                 <img
                   src={item.src}
                   alt={item.label}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
-                    // Hide broken image, gradient background will show
                     (e.target as HTMLImageElement).style.display = "none";
                   }}
                 />
@@ -81,18 +91,32 @@ const GallerySection = () => {
         </div>
       </section>
 
-      {/* Fullscreen lightbox */}
-      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+      {/* Fullscreen lightbox with arrows */}
+      <Dialog open={selectedIndex !== null} onOpenChange={() => setSelectedIndex(null)}>
         <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-none bg-transparent shadow-none [&>button]:text-foreground/70 [&>button]:hover:text-foreground">
           <VisuallyHidden>
             <DialogTitle>{selectedImage?.label ?? "Gallery image"}</DialogTitle>
           </VisuallyHidden>
           {selectedImage && (
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.label}
-              className="w-full h-full max-h-[90vh] object-contain rounded-sm"
-            />
+            <>
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.label}
+                className="w-full h-full max-h-[90vh] object-contain rounded-sm"
+              />
+              <button
+                onClick={goPrev}
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/60 backdrop-blur-sm flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-background/80 transition-all"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={goNext}
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/60 backdrop-blur-sm flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-background/80 transition-all"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </>
           )}
         </DialogContent>
       </Dialog>
