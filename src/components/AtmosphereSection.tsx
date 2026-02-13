@@ -5,10 +5,12 @@ const AtmosphereSection = () => {
 
   return (
     <section id="atmosfera" className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-brick-pattern opacity-60" />
-      <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/50 to-background/80" />
+      {/* Rich gradient background — change colors here */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(350,25%,12%)] via-[hsl(20,20%,10%)] to-[hsl(30,30%,8%)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/50" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-tungsten/8 blur-[120px]" />
-      <div className="absolute top-1/4 right-1/4 w-32 h-32 rounded-full bg-pink-ambient/10 blur-[60px]" />
+      <div className="absolute top-1/4 right-1/4 w-48 h-48 rounded-full bg-pink-ambient/12 blur-[80px]" />
+      <div className="absolute bottom-1/3 left-1/4 w-40 h-40 rounded-full bg-primary/6 blur-[60px]" />
       
       <div className="absolute top-8 left-1/2 -translate-x-1/2 flex flex-col items-center">
         <div className="w-px h-16 bg-foreground/10" />

@@ -12,13 +12,13 @@ const GallerySection = () => {
           <div className="divider-warm mt-4" />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {[
-            { bg: "bg-brick-pattern", label: "Interijer", span: "md:col-span-2 row-span-2 aspect-square md:aspect-auto min-h-[200px] md:min-h-[300px]" },
-            { bg: "bg-gradient-to-br from-secondary to-muted", label: "Šank", span: "aspect-square" },
-            { bg: "bg-gradient-to-tr from-wood to-brick", label: "Detalji", span: "aspect-square" },
-            { bg: "bg-gradient-to-r from-muted to-secondary", label: "Terasa", span: "md:col-span-2 aspect-video" },
-            { bg: "bg-gradient-to-bl from-brick-light to-wood", label: "Večer", span: "aspect-square" },
+            { bg: "bg-brick-pattern", label: "Interijer", span: "sm:col-span-2 md:col-span-2 md:row-span-2 aspect-video sm:aspect-video md:aspect-auto min-h-[200px] md:min-h-[300px]" },
+            { bg: "bg-gradient-to-br from-secondary to-muted", label: "Šank", span: "aspect-video sm:aspect-square" },
+            { bg: "bg-gradient-to-tr from-wood to-brick", label: "Detalji", span: "aspect-video sm:aspect-square" },
+            { bg: "bg-gradient-to-r from-muted to-secondary", label: "Terasa", span: "sm:col-span-2 md:col-span-2 aspect-video" },
+            { bg: "bg-gradient-to-bl from-brick-light to-wood", label: "Večer", span: "aspect-video sm:aspect-square" },
           ].map((item, i) => (
             <div
               key={i}
