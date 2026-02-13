@@ -21,7 +21,7 @@ const OutdoorSection = () => {
             <span className="text-primary/60 text-xs uppercase tracking-[0.3em] font-medium">Vanjski prostor</span>
             <h2 className="font-serif text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">
               Na otvorenom,{" "}
-              <span className="text-gradient-warm">ista Corner energija.</span>
+              <span className="text-gradient-warm">istra Corner energija.</span>
             </h2>
             <p className="text-foreground/50 text-lg font-light leading-relaxed">
               Kad sunce zađe, Corner se širi van — morski povjetarac, opušteni razgovori
